@@ -42,13 +42,23 @@ nav {
   
   div {
     margin-bottom: 10px;
+ 
   }
-  
+  .container{
+   text-align: center;
+  }
+  #report{
+    margin-left: 640px;
+  }
   label {
     display: inline-block;
     width: 100px;
   }
-  
+  input#female, input#male {
+    position: relative;
+    margin-right: 10px;
+    right: 10px;
+}
   input[type="text"],
   input[type="number"],
   select {
@@ -87,7 +97,7 @@ nav {
   flex-direction: column;
 }
   #result img{
-    width: 200px;
-    height: 100px;
+    width: 300px;
+    height: 400px;
   }
   
