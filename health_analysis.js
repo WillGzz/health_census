@@ -83,9 +83,9 @@ function searchCondition() {
           resultDiv.innerHTML += `<h2>${condition.name}</h2>`;
           resultDiv.innerHTML += `<img src="${condition.imagesrc}" alt="hjh">`;
 
-          resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p>`;
-          resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
-          resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;
+          resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p> <br>`;
+          resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>  <br>`;
+          resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`; 
         } else {
           resultDiv.innerHTML = 'Condition not found.';
         }

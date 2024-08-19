@@ -43,7 +43,7 @@
   <h1>Contact Us</h1>
   <p>Feel free to contact us to know more about your conditions and for treatment methods.</p>
 
-  <form id="contactForm">
+  <form id="contactForm" onsubmit="thankyou(event)"> <!--Call a function when a form is submitted:-->
     <div>
       <label for="name">Name</label>
       <input type="text" id="name" name="name" required>
@@ -60,27 +60,30 @@
       <label for="message">Message</label>
       <textarea id="message" name="message" rows="5" required></textarea>
     </div>
-    <button type="submit" onclick="thankyou()">Submit</button>
+    <button type="submit">Submit</button>
   </form>
   <script>
-   function thankyou() {
+   function thankyou(event) {
+    event.preventDefault(); //prevents the default behavior of the page reloading after submission
   const name = document.getElementById("name");
   const email = document.getElementById("email");
   const condition = document.getElementById("condition");
   const message = document.getElementById("message");
 
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (name.value && email.value && condition.value && message.value && emailPattern.test(email.value)) {
+  if (name.value && email.value && condition.value && message.value) {
     alert('Thank you for contacting us!');
-    if (alert){
-    name.value = "";
-    email.value = "";
-    condition.value = "";
-    message.value = "";
 
-    }
-}
+       // Clear the input fields
+      name.value = '';
+      email.value = '';
+      condition.value = '';
+      message.value = '';
+      /*
+    2 ways to achieve the same result
+    if we dont disable the page reloading after form submission, the input fields automatically are cleared 
+    if we do disable it, we must use also use onsubmit property, The onsubmit attribute is specifically designed for handling form submissions
+      */
+   }
 
    }
   </script>
